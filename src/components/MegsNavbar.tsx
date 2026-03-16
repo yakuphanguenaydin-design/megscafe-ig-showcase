@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import logoImg from "@/assets/megs-logo.png";
 
 const MegsNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -11,30 +12,41 @@ const MegsNavbar = () => {
   }, []);
 
   const links = [
-    { label: "Menu", href: "#menu" },
-    { label: "Drinks", href: "#drinks" },
-    { label: "Gallery", href: "#gallery" },
-    { label: "Visit Us", href: "#visit" },
+    { label: "Menu",     href: "#menu"    },
+    { label: "Drinks",   href: "#drinks"  },
+    { label: "Gallery",  href: "#gallery" },
+    { label: "Visit Us", href: "#visit"   },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-card border-b border-border"
+          ? "bg-background/96 backdrop-blur-md shadow-card border-b border-border"
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
+      <div className="container mx-auto flex items-center justify-between py-3 px-6">
         {/* Logo */}
-        <a
-          href="#"
-          className="font-display text-2xl font-bold tracking-wide"
-          style={{ color: scrolled ? "hsl(var(--primary))" : "#fff" }}
-        >
-          MEGS
-          <span className="block text-xs font-body font-normal tracking-[0.25em] uppercase" style={{ color: scrolled ? "hsl(var(--secondary))" : "hsl(var(--secondary))" }}>
-            Café Leipzig
+        <a href="#" className="flex items-center gap-3 group">
+          <img
+            src={logoImg}
+            alt="MEGS Café"
+            className="h-12 w-12 object-contain rounded-full transition-transform duration-300 group-hover:scale-105"
+          />
+          <span
+            className={`font-display text-lg font-bold tracking-wide transition-colors duration-300 ${
+              scrolled ? "" : "text-white"
+            }`}
+            style={scrolled ? { color: "hsl(var(--primary))" } : {}}
+          >
+            MEGS
+            <span
+              className="block text-xs font-body font-normal tracking-[0.3em] uppercase"
+              style={{ color: "hsl(var(--secondary))" }}
+            >
+              Café Leipzig
+            </span>
           </span>
         </a>
 
@@ -44,7 +56,7 @@ const MegsNavbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className={`font-body text-sm font-medium tracking-widest uppercase transition-colors duration-200 hover:opacity-70 ${
+              className={`font-body text-sm font-medium tracking-widest uppercase transition-colors duration-200 hover:opacity-60 ${
                 scrolled ? "text-foreground" : "text-white"
               }`}
             >
@@ -53,7 +65,7 @@ const MegsNavbar = () => {
           ))}
           <a
             href="#visit"
-            className="font-body text-sm font-medium tracking-widest uppercase px-5 py-2 rounded-full transition-all duration-300 hover:opacity-90"
+            className="font-body text-sm font-medium tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-300 hover:opacity-90 hover:scale-105"
             style={{ background: "hsl(var(--primary))", color: "hsl(var(--primary-foreground))" }}
           >
             Book a Table
@@ -80,7 +92,8 @@ const MegsNavbar = () => {
               key={l.href}
               href={l.href}
               onClick={() => setMenuOpen(false)}
-              className="font-body text-sm font-medium tracking-widest uppercase text-foreground hover:text-primary transition-colors"
+              className="font-body text-sm font-medium tracking-widest uppercase text-foreground hover:opacity-60 transition-opacity"
+              style={{ color: "hsl(var(--foreground))" }}
             >
               {l.label}
             </a>
