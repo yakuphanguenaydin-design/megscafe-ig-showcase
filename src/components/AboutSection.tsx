@@ -18,34 +18,39 @@ const AboutSection = () => {
       >
         {/* Decorative divider */}
         <div className="flex items-center justify-center gap-4 mb-8">
-          <div className="h-px w-16" style={{ background: "hsl(var(--secondary))" }} />
-          <span className="font-body text-xs tracking-[0.4em] uppercase" style={{ color: "hsl(var(--secondary))" }}>Our Story</span>
-          <div className="h-px w-16" style={{ background: "hsl(var(--secondary))" }} />
+          <div className="h-px w-16" style={{ background: "hsl(var(--primary))" }} />
+          <span className="font-body text-xs tracking-[0.4em] uppercase" style={{ color: "hsl(var(--primary))" }}>Our Story</span>
+          <div className="h-px w-16" style={{ background: "hsl(var(--primary))" }} />
         </div>
 
         <h2 className="font-display text-4xl md:text-5xl font-bold mb-8" style={{ color: "hsl(var(--primary))" }}>
           Where Every Morning
-          <span className="block italic font-normal mt-1">Feels Like a Weekend</span>
+          <span className="block italic font-normal mt-1" style={{ color: "hsl(var(--muted-foreground))" }}>Feels Like a Weekend</span>
         </h2>
 
-        <p className="font-body text-lg leading-relaxed mb-6" style={{ color: "hsl(var(--muted-foreground))" }}>
+        <p className="font-body text-lg leading-relaxed mb-6" style={{ color: "hsl(var(--foreground))" }}>
           MEGS Café is a modern brunch spot in the heart of Leipzig, born from a passion for beautifully crafted food and exceptional coffee. We source our ingredients thoughtfully, prepare everything with care, and serve it in a warm, welcoming space where time slows down.
         </p>
 
         <p className="font-body text-lg leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
-          From our freshly baked sourdough to our specialty espresso drinks — every detail reflects our love for quality. Whether you're here for a solo work session, a lazy brunch with friends, or just a perfect flat white, MEGS is your place.
+          From freshly baked sourdough to specialty espresso drinks — every detail reflects our love for quality. Whether you're here for a solo work session, a lazy brunch with friends, or just a perfect flat white, MEGS is your place.
         </p>
 
         <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-10">
           {[
             { number: "2017", label: "Founded in Leipzig" },
             { number: "100%", label: "Fresh Ingredients Daily" },
-            { number: "♥", label: "Made with Love" },
+            { number: "♥",    label: "Made with Love" },
           ].map((item) => (
-            <div key={item.label} className="flex flex-col items-center gap-2">
-              <span className="font-display text-4xl font-bold" style={{ color: "hsl(var(--primary))" }}>
-                {item.number}
-              </span>
+            <div key={item.label} className="flex flex-col items-center gap-3">
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center"
+                style={{ background: "hsl(var(--primary))" }}
+              >
+                <span className="font-display text-xl font-bold" style={{ color: "hsl(var(--primary-foreground))" }}>
+                  {item.number}
+                </span>
+              </div>
               <span className="font-body text-sm tracking-widest uppercase" style={{ color: "hsl(var(--muted-foreground))" }}>
                 {item.label}
               </span>

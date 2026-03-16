@@ -47,7 +47,7 @@ const MenuCard = ({ dish, delay }: { dish: typeof dishes[0]; delay: number }) =>
       style={{ transitionDelay: `${delay}ms` }}
       className={`group cursor-default transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
     >
-      <div className="overflow-hidden rounded-2xl mb-4 aspect-square shadow-card">
+      <div className="overflow-hidden rounded-2xl mb-5 aspect-square shadow-card">
         <img
           src={dish.image}
           alt={dish.name}
@@ -55,16 +55,19 @@ const MenuCard = ({ dish, delay }: { dish: typeof dishes[0]; delay: number }) =>
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
       </div>
-      <span
-        className="font-body text-xs tracking-[0.3em] uppercase mb-1 block"
-        style={{ color: "hsl(var(--secondary))" }}
-      >
-        {dish.tag}
-      </span>
-      <h3 className="font-display text-xl font-semibold mb-1" style={{ color: "hsl(var(--primary))" }}>
+      {/* Tag */}
+      <div className="mb-2">
+        <span
+          className="font-body text-xs tracking-[0.3em] uppercase px-3 py-1 rounded-full"
+          style={{ background: "hsl(var(--secondary))", color: "hsl(var(--primary))" }}
+        >
+          {dish.tag}
+        </span>
+      </div>
+      <h3 className="font-display text-xl font-semibold mt-3 mb-1" style={{ color: "hsl(var(--dark-fg))" }}>
         {dish.name}
       </h3>
-      <p className="font-body text-sm leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
+      <p className="font-body text-sm leading-relaxed" style={{ color: "hsl(var(--dark-muted))" }}>
         {dish.description}
       </p>
     </div>
@@ -82,7 +85,7 @@ const MenuSection = () => {
   }, []);
 
   return (
-    <section id="menu" className="py-28 px-6" style={{ background: "hsl(var(--muted))" }}>
+    <section id="menu" className="py-28 px-6" style={{ background: "hsl(var(--primary))" }}>
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div
@@ -94,9 +97,12 @@ const MenuSection = () => {
             <span className="font-body text-xs tracking-[0.4em] uppercase" style={{ color: "hsl(var(--secondary))" }}>What We Serve</span>
             <div className="h-px w-16" style={{ background: "hsl(var(--secondary))" }} />
           </div>
-          <h2 className="font-display text-4xl md:text-5xl font-bold" style={{ color: "hsl(var(--primary))" }}>
+          <h2 className="font-display text-4xl md:text-5xl font-bold" style={{ color: "hsl(var(--dark-fg))" }}>
             Menu Highlights
           </h2>
+          <p className="font-body text-base mt-4 max-w-xl mx-auto" style={{ color: "hsl(var(--dark-muted))" }}>
+            Every dish crafted with seasonal ingredients and genuine care.
+          </p>
         </div>
 
         {/* Grid */}

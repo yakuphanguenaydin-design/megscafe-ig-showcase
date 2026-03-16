@@ -18,9 +18,9 @@ const DrinksSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="h-px w-16" style={{ background: "hsl(var(--secondary))" }} />
-            <span className="font-body text-xs tracking-[0.4em] uppercase" style={{ color: "hsl(var(--secondary))" }}>Specialty Drinks</span>
-            <div className="h-px w-16" style={{ background: "hsl(var(--secondary))" }} />
+            <div className="h-px w-16" style={{ background: "hsl(var(--primary))" }} />
+            <span className="font-body text-xs tracking-[0.4em] uppercase" style={{ color: "hsl(var(--primary))" }}>Specialty Drinks</span>
+            <div className="h-px w-16" style={{ background: "hsl(var(--primary))" }} />
           </div>
           <h2 className="font-display text-4xl md:text-5xl font-bold" style={{ color: "hsl(var(--primary))" }}>
             Crafted with Care
@@ -30,7 +30,7 @@ const DrinksSection = () => {
         {/* Split layout */}
         <div
           ref={ref}
-          className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
           {/* Left — photos */}
           <div className="grid grid-cols-2 gap-4">
@@ -53,8 +53,8 @@ const DrinksSection = () => {
           </div>
 
           {/* Right — text */}
-          <div className="flex flex-col justify-center lg:pl-8">
-            <p className="font-body text-xs tracking-[0.4em] uppercase mb-4" style={{ color: "hsl(var(--secondary))" }}>
+          <div className="flex flex-col justify-center lg:pl-4">
+            <p className="font-body text-xs tracking-[0.4em] uppercase mb-4" style={{ color: "hsl(var(--secondary-foreground) / 0.6)" }}>
               Coffee Philosophy
             </p>
             <h3 className="font-display text-3xl md:text-4xl font-bold mb-6" style={{ color: "hsl(var(--primary))" }}>
@@ -79,7 +79,11 @@ const DrinksSection = () => {
                   desc: "Our signature — perfectly extracted espresso with silky microfoam latte art. The daily ritual for our regulars.",
                 },
               ].map((drink) => (
-                <div key={drink.name} className="border-l-2 pl-5 py-1" style={{ borderColor: "hsl(var(--secondary))" }}>
+                <div
+                  key={drink.name}
+                  className="border-l-2 pl-5 py-1"
+                  style={{ borderColor: "hsl(var(--primary))" }}
+                >
                   <h4 className="font-display text-lg font-semibold mb-1" style={{ color: "hsl(var(--primary))" }}>
                     {drink.name}
                   </h4>
