@@ -57,6 +57,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Brand tokens available as Tailwind classes
+        brand: {
+          green:  "#2F3F2F",
+          cream:  "#E7E5DD",
+          sage:   "#C7D1C3",
+          dark:   "#1F1F1F",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -68,9 +75,9 @@ export default {
         body:    ["'Inter'", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        card:  "0 4px 24px -4px hsl(25 40% 39% / 0.10)",
-        hero:  "0 8px 40px -8px hsl(25 40% 39% / 0.25)",
-        lift:  "0 16px 48px -8px hsl(25 40% 39% / 0.18)",
+        card:  "0 4px 24px -4px hsl(120 15% 10% / 0.12)",
+        hero:  "0 8px 40px -8px hsl(120 15% 10% / 0.30)",
+        lift:  "0 16px 48px -8px hsl(120 15% 10% / 0.20)",
       },
       keyframes: {
         "accordion-down": {
