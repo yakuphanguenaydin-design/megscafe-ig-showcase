@@ -2,6 +2,142 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ─── MEGS Café Design System ─────────────────────────────── */
+@layer base {
+  :root {
+    /* Brand palette (all HSL) */
+    --background:    40 50% 98%;        /* #FDFBF7 creamy oatmeal */
+    --foreground:    20 8% 16%;         /* #2D2926 soft charcoal  */
+
+    --card:          40 40% 96%;
+    --card-foreground: 20 8% 16%;
+
+    --popover:       40 50% 98%;
+    --popover-foreground: 20 8% 16%;
+
+    --primary:       25 40% 39%;        /* #8B5E3C warm roast brown */
+    --primary-foreground: 40 50% 98%;
+
+    --secondary:     30 52% 64%;        /* #D4A373 muted gold */
+    --secondary-foreground: 20 8% 16%;
+
+    --muted:         40 20% 92%;
+    --muted-foreground: 20 8% 45%;
+
+    --accent:        30 52% 64%;        /* muted gold accent */
+    --accent-foreground: 20 8% 16%;
+
+    --destructive:   0 84% 60%;
+    --destructive-foreground: 40 50% 98%;
+
+    --border:        30 20% 88%;
+    --input:         30 20% 88%;
+    --ring:          25 40% 39%;
+
+    --radius:        0.75rem;
+
+    /* Custom tokens */
+    --font-display:  'Playfair Display', Georgia, serif;
+    --font-body:     'Inter', system-ui, sans-serif;
+
+    --shadow-card:   0 4px 24px -4px hsl(25 40% 39% / 0.10);
+    --shadow-hero:   0 8px 40px -8px hsl(25 40% 39% / 0.25);
+
+    --gradient-warm: linear-gradient(135deg, hsl(25 40% 39%), hsl(30 52% 55%));
+    --gradient-hero: linear-gradient(to bottom, hsl(20 8% 10% / 0.15) 0%, hsl(20 8% 5% / 0.55) 100%);
+
+    --sidebar-background: 40 50% 98%;
+    --sidebar-foreground: 20 8% 16%;
+    --sidebar-primary: 25 40% 39%;
+    --sidebar-primary-foreground: 40 50% 98%;
+    --sidebar-accent: 40 20% 92%;
+    --sidebar-accent-foreground: 20 8% 16%;
+    --sidebar-border: 30 20% 88%;
+    --sidebar-ring: 25 40% 39%;
+  }
+
+  .dark {
+    --background:    20 8% 10%;
+    --foreground:    40 30% 92%;
+    --card:          20 8% 13%;
+    --card-foreground: 40 30% 92%;
+    --popover:       20 8% 13%;
+    --popover-foreground: 40 30% 92%;
+    --primary:       30 52% 64%;
+    --primary-foreground: 20 8% 10%;
+    --secondary:     20 8% 18%;
+    --secondary-foreground: 40 30% 92%;
+    --muted:         20 8% 18%;
+    --muted-foreground: 20 8% 55%;
+    --accent:        30 52% 64%;
+    --accent-foreground: 20 8% 10%;
+    --destructive:   0 62% 30%;
+    --destructive-foreground: 40 30% 92%;
+    --border:        20 8% 20%;
+    --input:         20 8% 20%;
+    --ring:          30 52% 64%;
+    --sidebar-background: 20 8% 10%;
+    --sidebar-foreground: 40 30% 92%;
+    --sidebar-primary: 30 52% 64%;
+    --sidebar-primary-foreground: 20 8% 10%;
+    --sidebar-accent: 20 8% 18%;
+    --sidebar-accent-foreground: 40 30% 92%;
+    --sidebar-border: 20 8% 20%;
+    --sidebar-ring: 30 52% 64%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+  }
+}
+
+/* ─── Scroll animations ────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
