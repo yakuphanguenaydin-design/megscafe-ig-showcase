@@ -1,4 +1,5 @@
 import heroImg from "@/assets/hero-breakfast.jpg";
+import logoImg from "@/assets/megs-logo.png";
 
 const HeroSection = () => {
   return (
@@ -11,14 +12,22 @@ const HeroSection = () => {
         loading="eager"
       />
 
-      {/* Gradient overlay */}
+      {/* Forest-green tinted gradient overlay */}
       <div
         className="absolute inset-0"
-        style={{ background: "var(--gradient-hero)" }}
+        style={{ background: "linear-gradient(to bottom, hsl(127 18% 8% / 0.25) 0%, hsl(127 18% 6% / 0.70) 100%)" }}
       />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
+        {/* Logo badge */}
+        <div className="flex justify-center mb-8 animate-fade-in">
+          <img
+            src={logoImg}
+            alt="MEGS Café"
+            className="w-24 h-24 object-contain rounded-full"
+          />
+        </div>
         <p className="font-body text-xs tracking-[0.4em] uppercase mb-6 animate-fade-in" style={{ color: "hsl(var(--secondary))" }}>
           Leipzig · Germany
         </p>
