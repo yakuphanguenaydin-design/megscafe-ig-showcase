@@ -20,11 +20,14 @@ const MegsNavbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/96 backdrop-blur-md shadow-card border-b border-border"
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+      style={{
+        background: scrolled
+          ? "hsl(120 15% 21% / 0.97)"
+          : "hsl(120 15% 21% / 0.88)",
+        backdropFilter: "blur(12px)",
+        borderBottom: scrolled ? "1px solid hsl(120 12% 30%)" : "1px solid transparent",
+      }}
     >
       <div className="container mx-auto flex items-center justify-between py-3 px-6">
         {/* Logo */}
@@ -32,22 +35,8 @@ const MegsNavbar = () => {
           <img
             src={logoImg}
             alt="MEGS Café"
-            className="h-12 w-12 object-contain rounded-full transition-transform duration-300 group-hover:scale-105"
+            className="h-11 w-11 object-contain transition-transform duration-300 group-hover:scale-105"
           />
-          <span
-            className={`font-display text-lg font-bold tracking-wide transition-colors duration-300 ${
-              scrolled ? "" : "text-white"
-            }`}
-            style={scrolled ? { color: "hsl(var(--primary))" } : {}}
-          >
-            MEGS
-            <span
-              className="block text-xs font-body font-normal tracking-[0.3em] uppercase"
-              style={{ color: "hsl(var(--secondary))" }}
-            >
-              Café Leipzig
-            </span>
-          </span>
         </a>
 
         {/* Desktop nav */}
@@ -56,17 +45,20 @@ const MegsNavbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className={`font-body text-sm font-medium tracking-widest uppercase transition-colors duration-200 hover:opacity-60 ${
-                scrolled ? "text-foreground" : "text-white"
-              }`}
+              className="font-body text-sm font-medium tracking-widest uppercase transition-all duration-200 hover:opacity-60"
+              style={{ color: "hsl(var(--dark-fg))" }}
             >
               {l.label}
             </a>
           ))}
           <a
             href="#visit"
-            className="font-body text-sm font-medium tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-300 hover:opacity-90 hover:scale-105"
-            style={{ background: "hsl(var(--primary))", color: "hsl(var(--primary-foreground))" }}
+            className="font-body text-sm font-medium tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-300 hover:opacity-90 hover:scale-105 border"
+            style={{
+              background: "hsl(var(--dark-fg))",
+              color: "hsl(var(--primary))",
+              borderColor: "hsl(var(--dark-fg))",
+            }}
           >
             Book a Table
           </a>
@@ -78,26 +70,37 @@ const MegsNavbar = () => {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`block w-6 h-0.5 transition-all duration-300 ${scrolled ? "bg-foreground" : "bg-white"}`} />
-          <span className={`block w-6 h-0.5 transition-all duration-300 ${scrolled ? "bg-foreground" : "bg-white"}`} />
-          <span className={`block w-6 h-0.5 transition-all duration-300 ${scrolled ? "bg-foreground" : "bg-white"}`} />
+          <span className="block w-6 h-0.5 transition-all duration-300" style={{ background: "hsl(var(--dark-fg))" }} />
+          <span className="block w-6 h-0.5 transition-all duration-300" style={{ background: "hsl(var(--dark-fg))" }} />
+          <span className="block w-6 h-0.5 transition-all duration-300" style={{ background: "hsl(var(--dark-fg))" }} />
         </button>
       </div>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-background/98 backdrop-blur-md border-b border-border py-6 px-6 flex flex-col gap-4 animate-fade-in">
+        <div
+          className="md:hidden py-6 px-6 flex flex-col gap-5 animate-fade-in border-t"
+          style={{ background: "hsl(120 15% 18%)", borderColor: "hsl(var(--dark-border))" }}
+        >
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setMenuOpen(false)}
-              className="font-body text-sm font-medium tracking-widest uppercase text-foreground hover:opacity-60 transition-opacity"
-              style={{ color: "hsl(var(--foreground))" }}
+              className="font-body text-sm font-medium tracking-widest uppercase transition-opacity hover:opacity-60"
+              style={{ color: "hsl(var(--dark-fg))" }}
             >
               {l.label}
             </a>
           ))}
+          <a
+            href="#visit"
+            onClick={() => setMenuOpen(false)}
+            className="font-body text-sm font-medium tracking-widest uppercase px-5 py-3 rounded-full text-center transition-all duration-300"
+            style={{ background: "hsl(var(--dark-fg))", color: "hsl(var(--primary))" }}
+          >
+            Book a Table
+          </a>
         </div>
       )}
     </header>
