@@ -8,33 +8,33 @@ import turkishEggsImg from "@/assets/menu-turkish-eggs.jpg";
 const dishes = [
   {
     image: turkishEggsImg,
-    name: "Turkish Eggs",
+    name: "Türkische Eier",
     tag: "Signature",
-    description: "Poached eggs on whipped labneh with chilli butter, roasted vegetables and sourdough toast.",
+    description: "Pochierte Eier auf Labneh mit Chilibutter, geröstetem Gemüse und Sauerteigtoast.",
   },
   {
     image: burrataImg,
     name: "Burrata Toast",
-    tag: "Savory",
-    description: "Toasted sourdough with fresh burrata, cherry tomatoes, basil & balsamic.",
+    tag: "Herzhaft",
+    description: "Geröstetes Sauerteigbrot mit frischer Burrata, Kirschtomaten, Basilikum & Balsamico.",
   },
   {
     image: smoothieImg,
     name: "Smoothie Bowl",
-    tag: "Healthy",
-    description: "Vibrant açaí base with seasonal fruits, granola, coconut & honey.",
+    tag: "Gesund",
+    description: "Lebhafte Açaí-Basis mit saisonalem Obst, Granola, Kokos & Honig.",
   },
   {
     image: brownieImg,
     name: "Fudge Brownie",
     tag: "Dessert",
-    description: "Our famous dense chocolate brownie — rich, fudgy and homemade daily.",
+    description: "Unser berühmter saftiger Schokoladenbrownies – täglich frisch gebacken.",
   },
   {
     image: macaronsImg,
     name: "Macarons",
     tag: "Patisserie",
-    description: "French-style macarons in rotating seasonal flavours. Always a treat.",
+    description: "Französische Macarons in wechselnden Saisongeschmacksrichtungen.",
   },
 ];
 
@@ -62,7 +62,6 @@ const MenuCard = ({ dish, delay }: { dish: typeof dishes[0]; delay: number }) =>
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
       </div>
-      {/* Tag */}
       <div className="mb-2">
         <span
           className="font-body text-xs tracking-[0.3em] uppercase px-3 py-1 rounded-full"
@@ -94,25 +93,22 @@ const MenuSection = () => {
   return (
     <section id="menu" className="py-28 px-6" style={{ background: "hsl(var(--primary))" }}>
       <div className="container mx-auto max-w-6xl">
-        {/* Header */}
         <div
           ref={ref}
           className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-px w-16" style={{ background: "hsl(var(--secondary))" }} />
-            <span className="font-body text-xs tracking-[0.4em] uppercase" style={{ color: "hsl(var(--secondary))" }}>What We Serve</span>
+            <span className="font-body text-xs tracking-[0.4em] uppercase" style={{ color: "hsl(var(--secondary))" }}>Was wir servieren</span>
             <div className="h-px w-16" style={{ background: "hsl(var(--secondary))" }} />
           </div>
           <h2 className="font-display text-4xl md:text-5xl font-bold" style={{ color: "hsl(var(--dark-fg))" }}>
-            Menu Highlights
+            Unsere Highlights
           </h2>
           <p className="font-body text-base mt-4 max-w-xl mx-auto" style={{ color: "hsl(var(--dark-muted))" }}>
-            Every dish crafted with seasonal ingredients and genuine care.
+            Jedes Gericht mit saisonalen Zutaten und echter Sorgfalt zubereitet.
           </p>
         </div>
-
-        {/* Grid — 5 cards, responsive */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {dishes.map((dish, i) => (
             <MenuCard key={dish.name} dish={dish} delay={i * 100} />

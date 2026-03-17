@@ -2,24 +2,24 @@ import { useEffect, useRef, useState } from "react";
 
 const testimonials = [
   {
-    quote: "Best brunch in Leipzig! The food is beautifully presented and every bite is pure happiness.",
+    quote: "Bester Brunch in Leipzig! Das Essen ist wunderschön angerichtet und jeder Bissen ist ein Genuss.",
     author: "Julia M.",
-    detail: "Regular since 2019",
+    detail: "Stammgast seit 2019",
   },
   {
-    quote: "Amazing coffee and beautiful food. MEGS is the kind of place you want to come back to every weekend.",
+    quote: "Unglaublicher Kaffee und traumhaftes Essen. Das MEGS ist genau das Café, zu dem man jeden Sonntag zurückkehren möchte.",
     author: "Tobias K.",
-    detail: "Google Review ★★★★★",
+    detail: "Google Bewertung ★★★★★",
   },
   {
-    quote: "Love the cozy atmosphere — it's warm, stylish, and the staff genuinely cares. My favourite spot in the city.",
+    quote: "Ich liebe die gemütliche Atmosphäre – warm, stilvoll und das Personal ist wirklich herzlich. Mein Lieblingsort in der Stadt.",
     author: "Nina R.",
-    detail: "Verified Guest",
+    detail: "Verifizierter Gast",
   },
   {
-    quote: "The Turkish eggs and flat white are absolutely divine. Nothing compares.",
+    quote: "Die türkischen Eier und der Flat White sind einfach göttlich. Nichts kommt da ran.",
     author: "Lena B.",
-    detail: "Google Review ★★★★★",
+    detail: "Google Bewertung ★★★★★",
   },
 ];
 
@@ -46,24 +46,22 @@ const TestimonialsSection = () => {
   return (
     <section className="py-28 px-6 overflow-hidden" style={{ background: "hsl(var(--background))" }}>
       <div className="container mx-auto max-w-6xl">
-        {/* Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-px w-16" style={{ background: "hsl(var(--primary))" }} />
             <span className="font-body text-xs tracking-[0.4em] uppercase" style={{ color: "hsl(var(--primary))" }}>
-              Guest Stories
+              Gästestimmen
             </span>
             <div className="h-px w-16" style={{ background: "hsl(var(--primary))" }} />
           </div>
           <h2 className="font-display text-4xl md:text-5xl font-bold" style={{ color: "hsl(var(--primary))" }}>
-            What Our Guests Say
+            Was unsere Gäste sagen
           </h2>
           <p className="font-body text-base mt-4 max-w-xl mx-auto" style={{ color: "hsl(var(--muted-foreground))" }}>
-            Real words from the people who make MEGS what it is.
+            Echte Worte der Menschen, die das MEGS zu dem machen, was es ist.
           </p>
         </div>
 
-        {/* Cards */}
         <div
           ref={ref}
           className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -78,7 +76,6 @@ const TestimonialsSection = () => {
                 transitionDelay: `${i * 80}ms`,
               }}
             >
-              {/* Open quote mark */}
               <span
                 className="font-display text-5xl leading-none mb-3 select-none"
                 style={{ color: "hsl(var(--primary) / 0.15)" }}
@@ -104,7 +101,6 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        {/* Google rating badge */}
         <div className="flex justify-center mt-14">
           <div
             className="inline-flex items-center gap-4 px-8 py-4 rounded-full"
@@ -118,7 +114,7 @@ const TestimonialsSection = () => {
               ))}
             </div>
             <span className="font-body text-sm font-medium tracking-wide">
-              4.9 · Rated Excellent on Google
+              4,9 · Ausgezeichnet auf Google bewertet
             </span>
           </div>
         </div>

@@ -3,12 +3,11 @@ import logoImg from "@/assets/megs-logo.png";
 const FooterSection = () => {
   return (
     <footer style={{ background: "hsl(var(--primary))" }}>
-      {/* Top divider */}
       <div className="h-px w-full" style={{ background: "hsl(120 12% 28%)" }} />
 
       <div className="container mx-auto max-w-6xl px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-          {/* Brand column */}
+          {/* Marke */}
           <div className="flex flex-col gap-5">
             <a href="#" className="flex items-center gap-3 group w-fit">
               <img
@@ -27,9 +26,8 @@ const FooterSection = () => {
               className="font-body text-sm leading-relaxed max-w-xs"
               style={{ color: "hsl(var(--dark-muted))" }}
             >
-              Modern breakfast & specialty coffee in the heart of Leipzig. A cozy corner where every morning feels like a weekend.
+              Modernes Frühstück & Specialty Coffee im Herzen von Leipzig. Eine gemütliche Ecke, wo sich jeder Morgen wie ein Wochenende anfühlt.
             </p>
-            {/* Instagram */}
             <a
               href="https://instagram.com/megscafe"
               target="_blank"
@@ -44,17 +42,17 @@ const FooterSection = () => {
             </a>
           </div>
 
-          {/* Visit column */}
+          {/* Besuche uns */}
           <div className="flex flex-col gap-4">
             <h4
               className="font-body text-xs tracking-[0.35em] uppercase font-semibold mb-2"
               style={{ color: "hsl(var(--secondary))" }}
             >
-              Visit Us
+              Besuche uns
             </h4>
             <p className="font-body text-sm leading-relaxed" style={{ color: "hsl(var(--dark-muted))" }}>
               Karl-Heine-Straße<br />
-              Leipzig, Germany
+              Leipzig, Deutschland
             </p>
             <a
               href="https://maps.google.com/?q=Karl-Heine-Straße+Leipzig"
@@ -63,39 +61,38 @@ const FooterSection = () => {
               className="font-body text-xs font-medium tracking-widest uppercase underline underline-offset-4 transition-opacity hover:opacity-60 w-fit"
               style={{ color: "hsl(var(--secondary))" }}
             >
-              Open in Maps
+              In Maps öffnen
             </a>
           </div>
 
-          {/* Hours column */}
+          {/* Öffnungszeiten */}
           <div className="flex flex-col gap-4">
             <h4
               className="font-body text-xs tracking-[0.35em] uppercase font-semibold mb-2"
               style={{ color: "hsl(var(--secondary))" }}
             >
-              Opening Hours
+              Öffnungszeiten
             </h4>
             <div className="space-y-2 font-body text-sm" style={{ color: "hsl(var(--dark-muted))" }}>
               <div className="flex justify-between gap-8">
-                <span>Daily</span>
-                <span className="font-medium" style={{ color: "hsl(var(--dark-fg))" }}>08:00 – 16:00</span>
+                <span>Täglich</span>
+                <span className="font-medium" style={{ color: "hsl(var(--dark-fg))" }}>08:00 – 16:00 Uhr</span>
               </div>
             </div>
             <p className="font-body text-xs mt-2" style={{ color: "hsl(var(--dark-muted) / 0.7)" }}>
-              Kitchen closes 15:30 · Last coffee 15:50
+              Küche schließt 15:30 · Letzter Kaffee 15:50
             </p>
           </div>
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="border-t" style={{ borderColor: "hsl(120 12% 28%)" }}>
         <div className="container mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="font-body text-xs" style={{ color: "hsl(var(--dark-muted))" }}>
-            © {new Date().getFullYear()} MEGS Café Leipzig · All rights reserved
+            © {new Date().getFullYear()} MEGS Café Leipzig · Alle Rechte vorbehalten
           </p>
           <p className="font-body text-xs" style={{ color: "hsl(var(--dark-muted) / 0.6)" }}>
-            Made with ♥ in Leipzig
+            Mit ♥ gemacht in Leipzig
           </p>
         </div>
       </div>
