@@ -3,8 +3,15 @@ import burrataImg from "@/assets/menu-burrata.jpg";
 import smoothieImg from "@/assets/menu-smoothie-bowl.jpg";
 import brownieImg from "@/assets/menu-brownie.jpg";
 import macaronsImg from "@/assets/menu-macarons.jpg";
+import turkishEggsImg from "@/assets/menu-turkish-eggs.jpg";
 
 const dishes = [
+  {
+    image: turkishEggsImg,
+    name: "Turkish Eggs",
+    tag: "Signature",
+    description: "Poached eggs on whipped labneh with chilli butter, roasted vegetables and sourdough toast.",
+  },
   {
     image: burrataImg,
     name: "Burrata Toast",
@@ -105,8 +112,8 @@ const MenuSection = () => {
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Grid — 5 cards, responsive */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {dishes.map((dish, i) => (
             <MenuCard key={dish.name} dish={dish} delay={i * 100} />
           ))}
