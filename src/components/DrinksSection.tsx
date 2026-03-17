@@ -15,7 +15,6 @@ const DrinksSection = () => {
   return (
     <section id="drinks" className="py-28 px-6" style={{ background: "hsl(var(--background))" }}>
       <div className="container mx-auto max-w-6xl">
-        {/* Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-px w-16" style={{ background: "hsl(var(--primary))" }} />
@@ -23,11 +22,10 @@ const DrinksSection = () => {
             <div className="h-px w-16" style={{ background: "hsl(var(--primary))" }} />
           </div>
           <h2 className="font-display text-4xl md:text-5xl font-bold" style={{ color: "hsl(var(--primary))" }}>
-            Crafted with Care
+            Mit Leidenschaft zubereitet
           </h2>
         </div>
 
-        {/* Split layout */}
         <div
           ref={ref}
           className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -55,28 +53,28 @@ const DrinksSection = () => {
           {/* Right — text */}
           <div className="flex flex-col justify-center lg:pl-4">
             <p className="font-body text-xs tracking-[0.4em] uppercase mb-4" style={{ color: "hsl(var(--secondary-foreground) / 0.6)" }}>
-              Coffee Philosophy
+              Unsere Kaffee-Philosophie
             </p>
             <h3 className="font-display text-3xl md:text-4xl font-bold mb-6" style={{ color: "hsl(var(--primary))" }}>
-              Beyond the <span className="italic font-normal">Ordinary Cup</span>
+              Weit über die <span className="italic font-normal">gewöhnliche Tasse</span> hinaus
             </h3>
             <p className="font-body text-base leading-relaxed mb-8" style={{ color: "hsl(var(--muted-foreground))" }}>
-              At MEGS, we take specialty coffee seriously. Every drink on our menu is crafted using carefully sourced single-origin beans, precise extraction and a genuine love for the craft.
+              Bei MEGS nehmen wir Specialty Coffee ernst. Jedes Getränk auf unserer Karte wird mit sorgfältig ausgewählten Single-Origin-Bohnen, präziser Extraktion und echter Leidenschaft für das Handwerk zubereitet.
             </p>
 
             <div className="space-y-6">
               {[
                 {
                   name: "Espresso Tonic",
-                  desc: "A bold shot of espresso layered over sparkling tonic water with a citrus peel garnish. Refreshing, complex and utterly unique.",
+                  desc: "Ein kräftiger Espresso-Shot über Tonic Water mit Zitrusschale. Erfrischend, komplex und einzigartig.",
                 },
                 {
                   name: "Iced Matcha Latte",
-                  desc: "Ceremonial-grade Japanese matcha whisked to a vibrant green, poured over cold oat milk and ice. Earthy, smooth, beautiful.",
+                  desc: "Japanischer Zeremoniell-Matcha, aufgeschlagen zu einem leuchtenden Grün, über kalter Hafermilch und Eis. Erdig, cremig, wunderschön.",
                 },
                 {
                   name: "MEGS Flat White",
-                  desc: "Our signature — perfectly extracted espresso with silky microfoam latte art. The daily ritual for our regulars.",
+                  desc: "Unser Signature-Drink – perfekt extrahierter Espresso mit samtigem Mikroschaum und Latte-Art. Das tägliche Ritual unserer Stammgäste.",
                 },
               ].map((drink) => (
                 <div

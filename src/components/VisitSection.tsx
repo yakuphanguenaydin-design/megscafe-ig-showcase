@@ -16,23 +16,22 @@ const VisitSection = () => {
         ref={ref}
         className={`container mx-auto max-w-6xl py-28 px-6 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
-        {/* Header */}
         <div className="text-center mb-20">
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-px w-16" style={{ background: "hsl(var(--secondary))" }} />
-            <span className="font-body text-xs tracking-[0.4em] uppercase" style={{ color: "hsl(var(--secondary))" }}>Find Us</span>
+            <span className="font-body text-xs tracking-[0.4em] uppercase" style={{ color: "hsl(var(--secondary))" }}>Besuche uns</span>
             <div className="h-px w-16" style={{ background: "hsl(var(--secondary))" }} />
           </div>
           <h2 className="font-display text-4xl md:text-5xl font-bold" style={{ color: "hsl(var(--dark-fg))" }}>
-            Come Sit With Us
+            Komm und sitz bei uns
           </h2>
           <p className="font-body text-base mt-4" style={{ color: "hsl(var(--dark-muted))" }}>
-            We'd love to see you. Here's where to find us.
+            Wir freuen uns auf dich. Hier findest du uns.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-          {/* Address */}
+          {/* Adresse */}
           <div className="flex flex-col items-center gap-4">
             <div
               className="w-12 h-12 rounded-full flex items-center justify-center text-xl"
@@ -40,24 +39,23 @@ const VisitSection = () => {
             >
               ◎
             </div>
-            <h3 className="font-display text-xl font-semibold" style={{ color: "hsl(var(--dark-fg))" }}>Address</h3>
+            <h3 className="font-display text-xl font-semibold" style={{ color: "hsl(var(--dark-fg))" }}>Adresse</h3>
             <p className="font-body text-base leading-relaxed" style={{ color: "hsl(var(--dark-muted))" }}>
-              Bloßstraße 33<br />
-              04103 Leipzig<br />
-              Germany
+              Karl-Heine-Straße<br />
+              Leipzig, Deutschland
             </p>
             <a
-              href="https://maps.google.com/?q=Bloßstraße+33+Leipzig"
+              href="https://maps.google.com/?q=Karl-Heine-Straße+Leipzig"
               target="_blank"
               rel="noopener noreferrer"
               className="font-body text-sm font-medium tracking-widest uppercase underline underline-offset-4 transition-opacity hover:opacity-60"
               style={{ color: "hsl(var(--secondary))" }}
             >
-              Get Directions
+              Route planen
             </a>
           </div>
 
-          {/* Opening hours */}
+          {/* Öffnungszeiten */}
           <div className="flex flex-col items-center gap-4">
             <div
               className="w-12 h-12 rounded-full flex items-center justify-center text-xl"
@@ -65,24 +63,19 @@ const VisitSection = () => {
             >
               ◷
             </div>
-            <h3 className="font-display text-xl font-semibold" style={{ color: "hsl(var(--dark-fg))" }}>Opening Hours</h3>
+            <h3 className="font-display text-xl font-semibold" style={{ color: "hsl(var(--dark-fg))" }}>Öffnungszeiten</h3>
             <div className="font-body text-base space-y-1" style={{ color: "hsl(var(--dark-muted))" }}>
               <div className="flex justify-between gap-10">
-                <span>Mon – Fri</span>
-                <span className="font-medium" style={{ color: "hsl(var(--dark-fg))" }}>8:00 – 17:00</span>
-              </div>
-              <div className="flex justify-between gap-10">
-                <span>Saturday</span>
-                <span className="font-medium" style={{ color: "hsl(var(--dark-fg))" }}>9:00 – 18:00</span>
-              </div>
-              <div className="flex justify-between gap-10">
-                <span>Sunday</span>
-                <span className="font-medium" style={{ color: "hsl(var(--dark-fg))" }}>9:00 – 16:00</span>
+                <span>Täglich</span>
+                <span className="font-medium" style={{ color: "hsl(var(--dark-fg))" }}>08:00 – 16:00</span>
               </div>
             </div>
+            <p className="font-body text-xs mt-1" style={{ color: "hsl(var(--dark-muted) / 0.7)" }}>
+              Küche schließt 15:30 · Letzter Kaffee 15:50
+            </p>
           </div>
 
-          {/* Connect */}
+          {/* Kontakt */}
           <div className="flex flex-col items-center gap-4">
             <div
               className="w-12 h-12 rounded-full flex items-center justify-center text-xl"
@@ -90,15 +83,15 @@ const VisitSection = () => {
             >
               ◈
             </div>
-            <h3 className="font-display text-xl font-semibold" style={{ color: "hsl(var(--dark-fg))" }}>Connect</h3>
+            <h3 className="font-display text-xl font-semibold" style={{ color: "hsl(var(--dark-fg))" }}>Kontakt</h3>
             <div className="font-body text-base space-y-2" style={{ color: "hsl(var(--dark-muted))" }}>
               <p>
                 <a
-                  href="mailto:hello@megscafe.de"
+                  href="mailto:hallo@megscafe.de"
                   className="transition-opacity hover:opacity-70"
                   style={{ color: "hsl(var(--dark-fg))" }}
                 >
-                  hello@megscafe.de
+                  hallo@megscafe.de
                 </a>
               </p>
               <p>
@@ -122,18 +115,6 @@ const VisitSection = () => {
               @megscafe
             </a>
           </div>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <div className="py-8 border-t" style={{ borderColor: "hsl(120 12% 28%)" }}>
-        <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-3">
-          <p className="font-display text-lg font-semibold" style={{ color: "hsl(var(--dark-fg))" }}>
-            MEGS Café Leipzig
-          </p>
-          <p className="font-body text-xs" style={{ color: "hsl(var(--dark-muted))" }}>
-            © {new Date().getFullYear()} MEGS Café · Bloßstraße 33, Leipzig · All rights reserved
-          </p>
         </div>
       </div>
     </section>

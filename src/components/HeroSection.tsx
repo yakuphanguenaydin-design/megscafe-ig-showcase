@@ -4,79 +4,60 @@ import logoImg from "@/assets/megs-logo.png";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image */}
       <img
         src={heroImg}
-        alt="MEGS Café breakfast plate"
+        alt="MEGS Café Frühstück"
         className="absolute inset-0 w-full h-full object-cover"
         loading="eager"
       />
-
-      {/* Deep green overlay — brand dominant */}
       <div
         className="absolute inset-0"
         style={{ background: "linear-gradient(to bottom, hsl(120 15% 8% / 0.45) 0%, hsl(120 15% 6% / 0.82) 100%)" }}
       />
-
-      {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
-        {/* Logo */}
         <div className="flex justify-center mb-8 animate-fade-in">
-          <img
-            src={logoImg}
-            alt="MEGS Café"
-            className="w-28 h-28 object-contain"
-          />
+          <img src={logoImg} alt="MEGS Café" className="w-28 h-28 object-contain" />
         </div>
-
         <p
           className="font-body text-xs tracking-[0.5em] uppercase mb-6 animate-fade-in"
           style={{ color: "hsl(110 10% 79%)" }}
         >
-          Leipzig · Germany
+          Leipzig · Deutschland
         </p>
-
         <h1
           className="font-display text-5xl md:text-7xl font-bold leading-tight mb-6 animate-fade-in-up"
           style={{ color: "hsl(45 14% 93%)" }}
         >
-          Modern Breakfast &
-          <span
-            className="block italic font-normal mt-1"
-            style={{ color: "hsl(110 10% 79%)" }}
-          >
+          Modernes Frühstück &
+          <span className="block italic font-normal mt-1" style={{ color: "hsl(110 10% 79%)" }}>
             Specialty Coffee
           </span>
         </h1>
-
         <p
           className="font-body text-lg md:text-xl mb-10 max-w-xl mx-auto animate-fade-in-up delay-200"
           style={{ color: "hsl(45 14% 93% / 0.75)" }}
         >
-          Creative brunch dishes, great coffee and a cozy café atmosphere in the heart of Leipzig.
+          Kreative Brunch-Gerichte, hochwertige Zutaten und eine gemütliche Café-Atmosphäre im Herzen von Leipzig.
         </p>
-
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
           <a
             href="#visit"
             className="font-body font-medium tracking-widest uppercase text-sm px-8 py-4 rounded-full transition-all duration-300 hover:opacity-90 hover:scale-105"
             style={{ background: "hsl(45 14% 93%)", color: "hsl(120 15% 21%)" }}
           >
-            Visit MEGS Café
+            MEGS Café besuchen
           </a>
           <a
             href="#menu"
             className="font-body font-medium tracking-widest uppercase text-sm px-8 py-4 rounded-full border transition-all duration-300 hover:bg-white/10"
             style={{ borderColor: "hsl(45 14% 93% / 0.5)", color: "hsl(45 14% 93%)" }}
           >
-            Explore Menu
+            Speisekarte entdecken
           </a>
         </div>
       </div>
-
-      {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in delay-600">
-        <span className="font-body text-xs tracking-widest uppercase" style={{ color: "hsl(45 14% 93% / 0.45)" }}>Scroll</span>
+        <span className="font-body text-xs tracking-widest uppercase" style={{ color: "hsl(45 14% 93% / 0.45)" }}>Scrollen</span>
         <div className="w-px h-10" style={{ background: "hsl(45 14% 93% / 0.30)" }} />
       </div>
     </section>
