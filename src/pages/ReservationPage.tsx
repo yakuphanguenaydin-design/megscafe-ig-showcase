@@ -1,19 +1,15 @@
 import MegsNavbar from "@/components/MegsNavbar";
-import HeroSection from "@/components/HeroSection";
-import GallerySection from "@/components/GallerySection";
 import VisitSection from "@/components/VisitSection";
 import FooterSection from "@/components/FooterSection";
 
-const Index = () => {
+const ReservationPage = () => {
   return (
     <main className="overflow-x-hidden">
       <MegsNavbar />
-      <HeroSection />
-      <GallerySection />
-      <VisitSection showReservationForm={false} />
+      <VisitSection />
       <FooterSection />
     </main>
   );
 };
 
-export default Index;
+export default ReservationPage;

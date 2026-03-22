@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import logoImg from "@/assets/megs-logo.png";
 
 const MegsNavbar = () => {
@@ -12,10 +13,9 @@ const MegsNavbar = () => {
   }, []);
 
   const links = [
-    { label: "Speisekarte", href: "#menu"    },
-    { label: "Getränke",    href: "#drinks"  },
-    { label: "Galerie",     href: "#gallery" },
-    { label: "Besuche uns", href: "#visit"   },
+    { label: "Start", href: "/" },
+    { label: "Speisekarte", href: "/speisekarte" },
+    { label: "Getränke", href: "/getraenke" },
   ];
 
   return (
@@ -28,13 +28,13 @@ const MegsNavbar = () => {
       }}
     >
       <div className="container mx-auto flex items-center justify-between py-3 px-6">
-        <a href="#" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group">
           <img
             src={logoImg}
             alt="MEGS Café"
             className="h-11 w-11 object-contain transition-transform duration-300 group-hover:scale-105"
           />
-        </a>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8">
           {links.map((l) => (
@@ -47,8 +47,8 @@ const MegsNavbar = () => {
               {l.label}
             </a>
           ))}
-          <a
-            href="#visit"
+          <Link
+            to="/reservieren"
             className="font-body text-sm font-medium tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-300 hover:opacity-90 hover:scale-105 border"
             style={{
               background: "hsl(var(--dark-fg))",
@@ -57,7 +57,7 @@ const MegsNavbar = () => {
             }}
           >
             Tisch reservieren
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -88,7 +88,7 @@ const MegsNavbar = () => {
             </a>
           ))}
           <a
-            href="#visit"
+            href="/reservieren"
             onClick={() => setMenuOpen(false)}
             className="font-body text-sm font-medium tracking-widest uppercase px-5 py-3 rounded-full text-center transition-all duration-300"
             style={{ background: "hsl(var(--dark-fg))", color: "hsl(var(--primary))" }}

@@ -41,14 +41,14 @@ const HeroSection = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
           <a
-            href="#visit"
+            href="/reservieren"
             className="font-body font-medium tracking-widest uppercase text-sm px-8 py-4 rounded-full transition-all duration-300 hover:opacity-90 hover:scale-105"
             style={{ background: "hsl(45 14% 93%)", color: "hsl(120 15% 21%)" }}
           >
             MEGS Café besuchen
           </a>
           <a
-            href="#menu"
+            href="/speisekarte"
             className="font-body font-medium tracking-widest uppercase text-sm px-8 py-4 rounded-full border transition-all duration-300 hover:bg-white/10"
             style={{ borderColor: "hsl(45 14% 93% / 0.5)", color: "hsl(45 14% 93%)" }}
           >

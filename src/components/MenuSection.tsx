@@ -52,17 +52,9 @@ const MenuCard = ({ dish, delay }: { dish: typeof dishes[0]; delay: number }) =>
     <div
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`group cursor-default transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+      className={`group cursor-default transition-all duration-700 flex flex-col ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
     >
-      <div className="overflow-hidden rounded-2xl mb-5 aspect-square shadow-card">
-        <img
-          src={dish.image}
-          alt={dish.name}
-          loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-      </div>
-      <div className="mb-2">
+      <div className="mb-2 order-1 sm:order-2">
         <span
           className="font-body text-xs tracking-[0.3em] uppercase px-3 py-1 rounded-full"
           style={{ background: "hsl(var(--secondary))", color: "hsl(var(--primary))" }}
@@ -70,12 +62,20 @@ const MenuCard = ({ dish, delay }: { dish: typeof dishes[0]; delay: number }) =>
           {dish.tag}
         </span>
       </div>
-      <h3 className="font-display text-xl font-semibold mt-3 mb-1" style={{ color: "hsl(var(--dark-fg))" }}>
+      <h3 className="font-display text-xl font-semibold mt-3 mb-1 order-1 sm:order-2" style={{ color: "hsl(var(--dark-fg))" }}>
         {dish.name}
       </h3>
-      <p className="font-body text-sm leading-relaxed" style={{ color: "hsl(var(--dark-muted))" }}>
+      <p className="font-body text-sm leading-relaxed order-1 sm:order-2" style={{ color: "hsl(var(--dark-muted))" }}>
         {dish.description}
       </p>
+      <div className="overflow-hidden rounded-2xl mb-5 aspect-square shadow-card order-2 sm:order-1 mt-4 sm:mt-0">
+        <img
+          src={dish.image}
+          alt={dish.name}
+          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+      </div>
     </div>
   );
 };
