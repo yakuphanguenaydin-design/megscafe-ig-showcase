@@ -6,7 +6,7 @@ const ReservationPage = () => {
   return (
     <main className="overflow-x-hidden">
       <MegsNavbar />
-      <VisitSection />
+      <VisitSection showVisitDetails={false} />
       <FooterSection />
     </main>
   );

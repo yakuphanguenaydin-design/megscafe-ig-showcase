@@ -25,9 +25,10 @@ const initialReservation: ReservationForm = {
 
 type VisitSectionProps = {
   showReservationForm?: boolean;
+  showVisitDetails?: boolean;
 };
 
-const VisitSection = ({ showReservationForm = true }: VisitSectionProps) => {
+const VisitSection = ({ showReservationForm = true, showVisitDetails = true }: VisitSectionProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [reservation, setReservation] = useState<ReservationForm>(initialReservation);
@@ -124,6 +125,8 @@ const VisitSection = ({ showReservationForm = true }: VisitSectionProps) => {
         ref={ref}
         className={`container mx-auto max-w-6xl py-28 px-6 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
+        {showVisitDetails && (
+        <>
         <div className="text-center mb-20">
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-px w-16" style={{ background: "hsl(var(--secondary))" }} />
@@ -224,9 +227,11 @@ const VisitSection = ({ showReservationForm = true }: VisitSectionProps) => {
             </a>
           </div>
         </div>
+        </>
+        )}
 
         {showReservationForm && (
-        <div className="mt-20 grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
+        <div className={`${showVisitDetails ? "mt-20" : "mt-0"} grid grid-cols-1 lg:grid-cols-5 gap-10 items-start`}>
           <div className="lg:col-span-2 rounded-2xl p-8" style={{ background: "hsl(var(--dark-fg) / 0.06)" }}>
             <p className="font-body text-xs tracking-[0.35em] uppercase" style={{ color: "hsl(var(--secondary))" }}>
               Tischreservierung
