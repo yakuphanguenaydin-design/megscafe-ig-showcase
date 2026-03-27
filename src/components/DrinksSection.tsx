@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import espressoImg from "@/assets/drink-espresso-tonic.jpg";
-import matchaImg from "@/assets/drink-matcha.jpg";
+
+const gingerTeaImg = "/images/ginger-tea-drink.jpg";
 
 const DrinksSection = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -30,24 +30,13 @@ const DrinksSection = () => {
           ref={ref}
           className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
-          {/* Left — photos */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="overflow-hidden rounded-2xl shadow-card aspect-[3/4]">
-              <img
-                src={espressoImg}
-                alt="Espresso Tonic"
-                loading="lazy"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div className="overflow-hidden rounded-2xl shadow-card aspect-[3/4] mt-8">
-              <img
-                src={matchaImg}
-                alt="Iced Matcha Latte"
-                loading="lazy"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
+          <div className="overflow-hidden rounded-2xl shadow-card aspect-[4/5]">
+            <img
+              src={gingerTeaImg}
+              alt="Ginger Tea Drink"
+              loading="lazy"
+              className="w-full h-full max-w-full object-cover hover:scale-105 transition-transform duration-700"
+            />
           </div>
 
           {/* Right — text */}
@@ -65,16 +54,16 @@ const DrinksSection = () => {
             <div className="space-y-6">
               {[
                 {
-                  name: "Espresso Tonic",
-                  desc: "Ein kräftiger Espresso-Shot über Tonic Water mit Zitrusschale. Erfrischend, komplex und einzigartig.",
-                },
-                {
-                  name: "Iced Matcha Latte",
-                  desc: "Japanischer Zeremoniell-Matcha, aufgeschlagen zu einem leuchtenden Grün, über kalter Hafermilch und Eis. Erdig, cremig, wunderschön.",
+                  name: "Ginger Tea Drink",
+                  desc: "Frischer Ingweraufguss mit leichter Schärfe, Zitrusnote und angenehmer Wärme.",
                 },
                 {
                   name: "MEGS Flat White",
                   desc: "Unser Signature-Drink – perfekt extrahierter Espresso mit samtigem Mikroschaum und Latte-Art. Das tägliche Ritual unserer Stammgäste.",
+                },
+                {
+                  name: "Seasonal Tea Special",
+                  desc: "Wechselnde Teekreationen mit Kräutern und Gewürzen, abgestimmt auf die Jahreszeit.",
                 },
               ].map((drink) => (
                 <div

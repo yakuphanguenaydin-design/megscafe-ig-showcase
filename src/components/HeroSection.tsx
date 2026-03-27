@@ -1,13 +1,12 @@
-import heroImg from "@/assets/hero-breakfast.jpg";
 import logoImg from "@/assets/megs-logo.png";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <img
-        src={heroImg}
+        src="/images/cafe-terrace.jpg"
         alt="MEGS Café Frühstück"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full max-w-full object-cover"
         loading="eager"
       />
       <div
